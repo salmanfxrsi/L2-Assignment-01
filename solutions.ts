@@ -9,6 +9,11 @@ function filterByRating(items: { title: string; rating: number }[]): { title: st
     return items.filter (item  => item.rating >= 4);
 }
 
+function concatenateArrays<T>(...arrays: T[][]): T[]
+{
+    return arrays.reduce( (previous, current) => previous.concat(current));
+}
+
 function processValue(value: string | number): number 
 {
     if(typeof value === "string") return (value.length);
