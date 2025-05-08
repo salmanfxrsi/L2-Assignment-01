@@ -14,6 +14,33 @@ function concatenateArrays<T>(...arrays: T[][]): T[]
     return arrays.reduce( (previous, current) => previous.concat(current));
 }
 
+class Vehicle {
+  private make: string;
+  private year: number;
+
+  constructor(make: string, year: number) {
+    this.make = make;
+    this.year = year;
+  }
+
+  getInfo(): string {
+    return `Make: ${this.make}, Year: ${this.year}`;
+  }
+}
+
+class Car extends Vehicle {
+  private model: string;
+
+  constructor(make: string, year: number, model: string) {
+    super(make, year);
+    this.model = model;
+  }
+
+  public getModel(): string {
+    return `Model: ${this.model}`;
+  }
+}  
+
 function processValue(value: string | number): number 
 {
     if(typeof value === "string") return (value.length);
@@ -49,14 +76,14 @@ function getDayType(day: Day): string
 
 async function squareAsync(n: number): Promise<number>
 {
-    return new Promise((resolve, reject) => {
-        if (n >= 0) {
-            setTimeout(() => {
-                return resolve (n * n);
-            }, 1000)
-        }
-        else {
-            return reject(new Error ("Negative number not allowed"));
-        }
-    })
+  return new Promise((resolve, reject) => {
+    if (n >= 0) {
+        setTimeout(() => {
+            return resolve (n * n);
+        }, 1000)
+    }
+    else {
+        return reject(new Error ("Negative number not allowed"));
+    }
+  })
 }
