@@ -52,6 +52,8 @@ Interfaces, on the other hand, are meant solely for describing object shapes and
 
 Both interfaces and type aliases are essential tools in TypeScript that help you write safer, more expressive code. While they overlap in some use cases, their unique capabilities make them better suited for different scenarios. A good rule of thumb is:
 
+
+
 **Use interfaces for defining object structures, and use type aliases for everything else.**
 
 # How TypeScript Improves Code Quality and Project Maintainability
